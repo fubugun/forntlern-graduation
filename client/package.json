@@ -1,0 +1,21 @@
+{
+  "name": "frontlearn-client",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^6.0.4",
+    "autoprefixer": "^10.4.27",
+    "canvas-confetti": "^1.9.4",
+    "monaco-editor": "^0.55.1",
+    "postcss": "^8.5.8",
+    "socket.io-client": "^4.8.3",
+    "tailwindcss": "^3.4.15",
+    "vite": "^7.3.1",
+    "vue": "^3.5.30"
+  }
+}
