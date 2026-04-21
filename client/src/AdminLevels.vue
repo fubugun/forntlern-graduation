@@ -176,11 +176,11 @@
           </div>
 
           <div class="rounded-xl border border-slate-800 bg-slate-900/70 p-3">
-            <div class="mb-2 text-xs text-slate-300">AI提示调用前后通过率对比图</div>
+            <div class="mb-2 text-xs text-slate-300">提示调用前后通过率对比图</div>
             <div class="space-y-3">
               <div>
                 <div class="mb-1 flex items-center justify-between text-[11px] text-slate-300">
-                  <span>未使用AI提示</span>
+                  <span>未使用提示</span>
                   <span>{{ analyticsData.aiCompare.withoutAiPassRate }}%</span>
                 </div>
                 <div class="h-2 rounded bg-slate-800">
@@ -189,7 +189,7 @@
               </div>
               <div>
                 <div class="mb-1 flex items-center justify-between text-[11px] text-slate-300">
-                  <span>使用AI提示后</span>
+                  <span>使用提示后</span>
                   <span>{{ analyticsData.aiCompare.withAiPassRate }}%</span>
                 </div>
                 <div class="h-2 rounded bg-slate-800">
@@ -197,7 +197,7 @@
                 </div>
               </div>
               <div class="text-[10px] text-slate-400">
-                已调用AI提示 {{ analyticsData.aiCompare.aiHintCount }} 次，提示后通关 {{ analyticsData.aiCompare.aiHelpedPassCount }} 次
+                已调用提示 {{ analyticsData.aiCompare.aiHintCount }} 次，提示后通关 {{ analyticsData.aiCompare.aiHelpedPassCount }} 次
               </div>
             </div>
           </div>
@@ -224,7 +224,7 @@
         </div>
 
         <div class="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
-          <div class="mb-2 text-xs text-slate-300">AI学习观察</div>
+          <div class="mb-2 text-xs text-slate-300">学习观察</div>
           <p class="text-sm leading-6 text-slate-100">{{ analyticsData.aiNarrative }}</p>
         </div>
       </template>

@@ -11,7 +11,7 @@
 
     <div class="relative z-10 mb-4 text-center">
       <h2 class="title-glow text-2xl font-bold tracking-[0.18em] text-sky-100">前端探险家</h2>
-      <p class="mt-1 text-[11px] text-sky-300/90">点亮每一关，解锁你的前端魔法</p>
+      <p class="mt-1 text-[11px] text-sky-300/90">点亮每一关，提升你的前端能力</p>
     </div>
 
     <div class="relative z-10 mb-4 flex items-center gap-3">

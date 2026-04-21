@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+  <div class="min-h-screen bg-gradient-to-br from-sky-50 via-blue-50 to-slate-100 text-slate-800">
     <AdminLevels
       v-if="isAdminRoute && authToken && currentUser?.role === 'admin'"
       :token="authToken"
@@ -225,7 +225,7 @@
     <!-- 未登录：显示登录 / 注册卡片 -->
     <div
       v-if="!authToken"
-      class="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900"
+      class="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-sky-100 via-blue-50 to-slate-100"
     >
       <div class="w-full max-w-md">
         <div class="mb-3 grid grid-cols-2 gap-2 rounded-xl border border-sky-300/40 bg-slate-900/80 p-1.5">
@@ -411,7 +411,7 @@
           </div>
         </div>
         <div class="rounded-2xl border border-slate-800/80 bg-slate-950/70 p-4">
-          <div class="text-xs text-emerald-300 uppercase tracking-wide mb-2">学习路径建议</div>
+          <div class="text-xs text-emerald-300 uppercase tracking-wide mb-2">学习建议</div>
           <div class="space-y-1 max-h-[180px] overflow-y-auto scrollbar-thin">
             <div
               v-for="(item, idx) in learningSuggestions"
@@ -429,7 +429,7 @@
     <section v-if="false" class="px-4 lg:px-6 pt-3">
       <div class="rounded-2xl border border-slate-800/80 bg-slate-950/70 p-4">
         <div class="flex items-center justify-between mb-2">
-          <div class="text-xs text-fuchsia-300 uppercase tracking-wide">智能补强题</div>
+          <div class="text-xs text-fuchsia-300 uppercase tracking-wide">补强练习</div>
           <div class="text-[10px] text-slate-500">根据你的薄弱点自动推荐</div>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
@@ -608,7 +608,7 @@
           </div>
           <div v-if="aiSolveHint" class="border-t border-slate-800/70 bg-slate-900/80 px-4 py-2 text-[11px] text-amber-200">
             <div class="flex items-center justify-between gap-2">
-              <span>🤖 {{ aiSolveHint }}</span>
+                <span>{{ aiSolveHint }}</span>
               <span v-if="aiHintLoading" class="text-[10px] text-slate-400">正在分析...</span>
             </div>
             <div v-if="aiChecklist.length > 0" class="mt-1 text-[10px] text-amber-100/90">
@@ -645,7 +645,7 @@
       <button class="h-10 w-10 rounded-full border border-slate-600 bg-slate-900/90 text-xs" @click="openPanel('badges')">🎖️</button>
       <button class="h-10 w-10 rounded-full border border-slate-600 bg-slate-900/90 text-xs" @click="goCollabPage">🤝</button>
       <button class="relative h-10 w-10 rounded-full border border-slate-600 bg-slate-900/90 text-xs" @click="openPanel('ai')">
-        🤖
+        📘
         <span v-if="showAiRedDot" class="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-red-500"></span>
       </button>
     </div>
@@ -660,7 +660,7 @@
                 ? '排行榜'
                 : activePanel === 'badges'
                 ? '徽章墙'
-                : '学习推荐'
+                : '学习辅助'
             }}
           </div>
           <button class="text-slate-400 hover:text-white" @click="closePanel()">✕</button>
