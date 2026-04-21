@@ -292,7 +292,7 @@
             游戏化前端学习
           </div>
           <div class="text-xs text-slate-400">
-            HTML · CSS · JS · DOM 探险之旅
+            HTML · CSS · JS · DOM 学习平台
           </div>
         </div>
       </div>
@@ -411,7 +411,7 @@
           </div>
         </div>
         <div class="rounded-2xl border border-slate-800/80 bg-slate-950/70 p-4">
-          <div class="text-xs text-emerald-300 uppercase tracking-wide mb-2">AI 学习路径建议</div>
+          <div class="text-xs text-emerald-300 uppercase tracking-wide mb-2">学习路径建议</div>
           <div class="space-y-1 max-h-[180px] overflow-y-auto scrollbar-thin">
             <div
               v-for="(item, idx) in learningSuggestions"
@@ -429,7 +429,7 @@
     <section v-if="false" class="px-4 lg:px-6 pt-3">
       <div class="rounded-2xl border border-slate-800/80 bg-slate-950/70 p-4">
         <div class="flex items-center justify-between mb-2">
-          <div class="text-xs text-fuchsia-300 uppercase tracking-wide">AI 智能补强题</div>
+          <div class="text-xs text-fuchsia-300 uppercase tracking-wide">智能补强题</div>
           <div class="text-[10px] text-slate-500">根据你的薄弱点自动推荐</div>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
@@ -463,17 +463,17 @@
 
     <main class="p-4 lg:p-6 pt-3">
       <div class="grid grid-cols-1 xl:grid-cols-[320px_minmax(0,1.5fr)_minmax(0,1.2fr)] gap-4 lg:gap-5">
-        <!-- 左侧：NPC + 任务书 -->
+        <!-- 左侧：学习提示 + 任务书 -->
         <section class="space-y-3">
           <div class="rounded-2xl border border-slate-800/80 bg-slate-900/70 p-4 shadow-lg shadow-emerald-500/10">
             <div class="flex items-center gap-3 mb-2">
               <div class="h-10 w-10 rounded-full bg-gradient-to-br from-emerald-400 to-ocean-400 shadow-md shadow-emerald-500/40" />
               <div>
                 <div class="text-xs font-semibold tracking-wide text-emerald-300 uppercase">
-                  NPC 向导
+                  学习向导
                 </div>
                 <div class="text-xs text-slate-400">
-                  会用故事方式给出“探险提示”
+                  会根据进度给出学习提示
                 </div>
               </div>
             </div>
@@ -485,7 +485,7 @@
                   {{ typingText }}
                 </div>
                 <div v-else class="text-slate-500">
-                  正在聆听你的代码咒语……
+                  正在分析你的代码输入……
                 </div>
               </div>
             </div>
@@ -524,7 +524,7 @@
           <div class="flex items-center justify-between border-b border-slate-800/70 px-4 py-2">
             <div class="flex items-center gap-2 text-xs text-slate-400">
               <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>探险工作台 · 代码编辑区（流畅模式）</span>
+              <span>学习工作台 · 代码编辑区（流畅模式）</span>
             </div>
             <div class="flex items-center gap-2">
               <button
@@ -557,7 +557,7 @@
                 class="inline-flex items-center gap-1 rounded-full border border-amber-500/50 bg-amber-500/10 px-3 py-1 text-[11px] font-medium text-amber-200 hover:bg-amber-500/20 transition"
                 @click="requestAiSolveHint"
               >
-                <span>AI 解题提示</span>
+                <span>解题提示</span>
               </button>
               <button
                 v-if="currentUser?.role === 'admin' && level?.adminAnswer"
@@ -577,7 +577,7 @@
                 :class="autoAiHint ? 'border-fuchsia-500/50 bg-fuchsia-500/10 text-fuchsia-200' : 'border-slate-500/50 bg-slate-700/30 text-slate-200'"
                 @click="autoAiHint = !autoAiHint"
               >
-                <span>{{ autoAiHint ? '自动AI提示开' : '自动AI提示关' }}</span>
+                <span>{{ autoAiHint ? '自动提示开' : '自动提示关' }}</span>
               </button>
             </div>
           </div>
@@ -600,7 +600,7 @@
               ✅ 校验通过！可以继续前进。
             </div>
             <div v-else class="text-amber-300">
-              ⚠ 还差一点点：根据左侧 NPC 的提示再试试。
+              ⚠ 还差一点点：根据左侧提示再试试。
             </div>
             <div class="text-slate-500">
               规则检查：{{ validationResult.errors.length === 0 ? '全部通过' : validationResult.errors.length + ' 处未通过' }}
@@ -609,7 +609,7 @@
           <div v-if="aiSolveHint" class="border-t border-slate-800/70 bg-slate-900/80 px-4 py-2 text-[11px] text-amber-200">
             <div class="flex items-center justify-between gap-2">
               <span>🤖 {{ aiSolveHint }}</span>
-              <span v-if="aiHintLoading" class="text-[10px] text-slate-400">AI 思考中...</span>
+              <span v-if="aiHintLoading" class="text-[10px] text-slate-400">正在分析...</span>
             </div>
             <div v-if="aiChecklist.length > 0" class="mt-1 text-[10px] text-amber-100/90">
               <span v-for="(item, idx) in aiChecklist" :key="idx" class="mr-2">- {{ item }}</span>
@@ -624,7 +624,7 @@
           <div class="flex items-center justify-between border-b border-slate-800/70 px-4 py-2">
             <div class="flex items-center gap-2 text-xs text-slate-400">
               <span class="h-2 w-2 rounded-full bg-amber-400" />
-              <span>魔法结界 · 实时预览</span>
+              <span>代码预览 · 实时预览</span>
             </div>
             <div class="text-[10px] text-slate-500">
               默认手动刷新，避免输入卡顿
@@ -660,7 +660,7 @@
                 ? '排行榜'
                 : activePanel === 'badges'
                 ? '徽章墙'
-                : 'AI 推荐'
+                : '学习推荐'
             }}
           </div>
           <button class="text-slate-400 hover:text-white" @click="closePanel()">✕</button>
@@ -1296,7 +1296,7 @@ async function runValidation() {
     rewardAutoCloseTimer = setTimeout(() => {
       closeRewardModal();
     }, 4000);
-    startTyping('【系统】：“漂亮的咒语！这一次，你成功让代码在结界中闪耀起来了。”');
+    startTyping('【系统】本次提交已通过，继续下一步学习。');
 
     // 通关烟花特效：在屏幕中心喷洒五彩纸屑
     confetti({
@@ -1458,7 +1458,7 @@ function applyRemedialExercise(exercise) {
   };
   codeValue.value = exercise.starterCode || '';
   refreshPreviewNow();
-  startTyping(`【AI 导师】先做这道补强题：${exercise.title}`);
+  startTyping(`【学习助手】先做这道补强题：${exercise.title}`);
   aiSolveHint.value = exercise.hint || '';
   aiChecklist.value = exercise.checklist || [];
 }

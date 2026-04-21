@@ -1,4 +1,4 @@
-# 游戏化前端学习与 AI 辅导平台
+# 游戏化前端学习平台
 
 面向前端入门的闯关式学习平台，集成在线编辑、实时预览与规则判题，支持题库管理与 Vue 专题扩展。
 
@@ -117,7 +117,7 @@ node start.js
 双人协作
 <img width="2419" height="1165" alt="屏幕截图 2026-03-22 145306" src="https://github.com/user-attachments/assets/b6cd3f3f-cab5-4c00-8f3c-244903075ee9" />
 
-AI生题
+补强练习
 <img width="600" height="802" alt="屏幕截图 2026-03-22 145259" src="https://github.com/user-attachments/assets/daff0c22-c3b4-44bd-a569-15cecfdab9fb" />
 
 ---
